@@ -21,7 +21,7 @@ class Report:
 
     def set_plugin(self,Plugin:Plugin,alias=None):
         for n in self.nodes:
-            Plugin().apply2Nodes(n)
+            Plugin.apply2Nodes(n)
 
         if alias is None:
             alias=Plugin.__name__
