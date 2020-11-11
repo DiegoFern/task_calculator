@@ -5,12 +5,16 @@ class Plugin_to_dot(Plugin):
     METHODS=['to_dot']
 
     def to_dot(self,Report):
+        def print(x):
+            print._ans+=x+'\n'
+        print._ans = ''
         print('digraph{')
         for node in Report.nodes:
             print(Plugin_to_dot.print_node(node))
             for g in (Plugin_to_dot.print_edge(node)):
                 print(g)
         print('}')
+        return print._ans
 
 
 
