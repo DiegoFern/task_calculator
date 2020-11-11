@@ -10,11 +10,17 @@ class Node:
         def f(**kwargs):
             return
         self.function = f
+        self._name = None
         self.id_node = next(self.n_node)
 
     def setfunction(self,f):
         self.function = f
+        if self._name == None:
+            self._name=f.__name__
         return self
+    
+    def setname(self,name):
+        self._name=name
 
     def run(self):
         if self.calculated:
