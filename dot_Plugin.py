@@ -20,7 +20,7 @@ class Plugin_to_dot(Plugin):
 
     def print_node(node):
         return ''' n_{n}[shape=square, label={f}, color={color},style=filled,
-                    href='/n_{f}'
+                    href="/n_{n}"
     ]; '''.format(
 
                    f=str(node.function.__name__),
